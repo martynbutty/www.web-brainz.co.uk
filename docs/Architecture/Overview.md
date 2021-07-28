@@ -7,7 +7,6 @@ Search for "ship called the Vasa"...
 * Email driven architecture - People forget / lose / don't know / didn't read / weren't around when an email of architecture 
   decision sent, therefore don't implement it correctly
 
-
 ## Architecture Patterns
 E.g. CQRS is a pattern, but not a style. The difference spans from questions like "is CQRS a pattern, and is microkernel 
 different fromCQRS?" I.e. you can deploy a pattern like CQRS into systems using the architectural styles like microservices, 
@@ -17,7 +16,6 @@ space based, event driven and modular monolith etc.
 * A non-domain design consideration
 * Influences some structural aspect of the design
 * Critical or important to application success
-
 
 ## Architecture Styles
 
@@ -63,6 +61,22 @@ Service based, microservices architecture. Where not all of a system have to be 
 characteristics of microservices?
 
 Microservices-event driven (or Event driven microservices)
+
+## Distributed Architecture Consdierations
+
+## The Fallacies of Distributed Computing
+Suggested by L. Peter Deutsch and colleagues from Sun Microsystems in 1994, these fallacies still hold worthy consideration
+today. [Ref: https://en.wikipedia.org/wiki/Fallacies_of_distributed_computing]
+
+### The Network is Reliable
+Do not assume that the network is reliable, even though they have become more reliable over time, they remain generally 
+unreliable. Distributed architectures rely on the network for communication between services. Even though all the services 
+may be up and healthy, if they cannot communicate with each other, the system as a whole may not be healthy. Make sure
+to consider things like timeouts and circuit breakers, to prevent phenomena like cascade failures.
+
+### Latency is Zero
+When you call some method in another service using something like REST or RPC, the measurment of time is usually in milliseconds.
+ Compare that to internal method calls where we're measuring in nano or microseconds.
 
 ## Service Granularity
 
