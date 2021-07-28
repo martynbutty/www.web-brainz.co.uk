@@ -7,7 +7,7 @@ phases:
 
   pre_build:
     commands:
-      - echo No pre-build required
+      - yarn run install
 
   build:
     commands:
