@@ -7,6 +7,12 @@ This website is built using [Docusaurus 2](https://docusaurus.io/), a modern sta
 ```console
 yarn install
 ```
+Note, to force a different registry (useful if you have an internal registry as your machine default), use the below. 
+This will prevent your `yarn.lock` file referencing your internal registry which might not be accessible from all places
+your trying to install from (e.g. if using AWS codeBuild)
+```console
+yarn --registry=https://registry.yarnpkg.com install
+```
 
 ## Local Development
 
